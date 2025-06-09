@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import data from '../assets/data'
+import { useCart } from '../context/cartcontext'
 
-function OrderModal ({modalMenu, setModalOn, cart, setCart}) {
+function OrderModal ({modalMenu, setModalOn}) {
     const [ options, setOptions ] = useState({'온도': 0, '진하기': 0, '사이즈': 0})
     const [ quantity, setQuantity ] = useState(1)
     const itemOptions = data.options
+    const {cart, setCart} =useCart()
     console.log(options)
     return (
         <>
